@@ -8,7 +8,7 @@ module.exports = BaseController.extend({
 		var self = this, timestamp = Math.round(new Date().getTime() / 1000);
 
 		request.post(
-			{url:'http://172.16.1.2:8080/saml/createresponse?customerId=marktwain&resourceUrl=something&b=' + timestamp},
+			{url:'http://172.16.1.2:8080/saml/createresponse?customerId=marktwain&resourceUrl=something'},
 			function(err, resp, body){
 				self.content.samlresponse = body;
 				new View(res, 'saml').render( self.content, { navigation: '_nav' } );
